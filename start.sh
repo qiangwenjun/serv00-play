@@ -369,7 +369,7 @@ make_hy2_config() {
              "password": "$uuid"
          }
      ],
-     "masquerade": "https://www.bing.com",
+     "masquerade": "https://pan.qiangsungroup.cn",
      "tls": {
          "enabled": true,
          "alpn": [
@@ -407,7 +407,7 @@ generate_config() {
   comma0=""
   if [[ ! -e "private.key" || ! -e "cert.pem" ]]; then
     openssl ecparam -genkey -name prime256v1 -out "private.key"
-    openssl req -new -x509 -days 3650 -key "private.key" -out "cert.pem" -subj "/CN=www.bing.com"
+    openssl req -new -x509 -days 3650 -key "private.key" -out "cert.pem" -subj "/CN=pan.qiangsungroup.cn"
   fi
   if [[ "$type" == "1.1" || "$type" == "1.2" ]]; then
     make_vmess_config
